@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views.generic import CreateView
+from django.contrib.auth.forms import UserCreationForm
 
 from . import forms
 
@@ -8,6 +9,7 @@ from . import forms
 
 
 class SignUp(CreateView):
-    form_class = forms.UserCreateForm
+    # form_class = forms.UserCreateForm
+    form_class = UserCreationForm
     success_url = reverse_lazy('login')
     template_name = 'accounts/signup.html'

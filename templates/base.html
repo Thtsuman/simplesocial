@@ -1,10 +1,9 @@
 <!DOCTYPE html>
+{% load staticfiles %}
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Simple Social</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -28,32 +27,26 @@
 
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="{% url 'home' %}">Simple Social</a>
-        <div class="collapse navbar-collapse">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                </li>
-            </ul>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light mynav">
+        <div class="container">
+            <a class="navbar-brand" href="{% url 'home' %}">Simple Social</a>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav mr-auto">
+                </ul>
 
-            <ul>
-                {% if user.is_authenticated %}
-                <li class="nav-item"><a href="" class="nav-link">Post</a></li>
-                <li class="nav-item"><a href="" class="nav-link">Groups</a></li>
-                <li class="nav-item"><a href="" class="nav-link">Create Group</a></li>
-                <li class="nav-item"><a href="{% url 'accounts:logout' %}" class="nav-link">Logout</a></li>
-                {% else %}
-                <li class="nav-item"><a href="" class="nav-link">Groups</a></li>
-                <li class="nav-item"><a href="{% url 'accounts:login' %}" class="nav-link">Log In</a></li>
-                <li class="nav-item"><a href="{% url 'accounts:signup' %}" class="nav-link">Sign Up</a></li>
-                {% endif %}
-            </ul>
-
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>
+                <ul class="navbar-nav ">
+                    {% if user.is_authenticated %}
+                    <li class="nav-item"><a href="" class="nav-link">Post</a></li>
+                    <li class="nav-item"><a href="" class="nav-link">Groups</a></li>
+                    <li class="nav-item"><a href="" class="nav-link">Create Group</a></li>
+                    <li class="nav-item"><a href="{% url 'accounts:logout' %}" class="nav-link">Logout</a></li>
+                    {% else %}
+                    <li class="nav-item"><a href="" class="nav-link">Groups</a></li>
+                    <li class="nav-item"><a href="{% url 'accounts:login' %}" class="nav-link">Log In</a></li>
+                    <li class="nav-item"><a href="{% url 'accounts:signup' %}" class="nav-link">Sign Up</a></li>
+                    {% endif %}
+                </ul>
+            </div>
         </div>
     </nav>
 

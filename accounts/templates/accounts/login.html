@@ -5,10 +5,14 @@
 {% block content %}
 <div class="container">
     <h1>Log In</h1>
-    <form method="POST">
-        {% csrf_token %}
-        {% bootstrap_form form %}
-        <input type="submit" class="btn btn-default" value="Log In">
-    </form>
+    <div class="row">
+        <div class="col-md-8">
+            <form method="POST">
+                {% csrf_token %}
+                {% bootstrap_form form %}
+                <input type="submit" class="btn btn-success" value="Log In">
+            </form>
+        </div>
+    </div>
 </div>
 {% endblock content %}
